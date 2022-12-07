@@ -1,7 +1,7 @@
 # Create VM instance
 resource "google_compute_instance" "vm_instance" {
-  name = "${var.instance_name}"
-  project = "qwiklabs-gcp-02-2e035783b61f"
+  name    = "${var.instance_name}"
+  project = "${var.project_id}"
   
   # RESOURCE properties go here
   zone         = "${var.instance_zone}"
