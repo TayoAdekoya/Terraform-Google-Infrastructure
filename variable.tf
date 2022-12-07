@@ -4,3 +4,4 @@ variable "instance_type" {
   default = "e2-micro"
 }
 variable "instance_network" {}
+variable "project_id' {}
