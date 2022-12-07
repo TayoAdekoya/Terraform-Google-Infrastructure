@@ -1,0 +1,22 @@
+# Create VM instance
+resource "google_compute_instance" "vm_instance" {
+  name = "${var.instance_name}"
+  project = "qwiklabs-gcp-02-2e035783b61f"
+  
+  # RESOURCE properties go here
+  zone         = "${var.instance_zone}"
+  machine_type = "${var.instance_type}"
+  
+  boot_disk {
+    initialize_params {
+        image = "debian-cloud/debian-11"
+    }
+  }
+ 
+ network_interface {
+  network = "${var.instance_network}"
+  access_config {
+    # Allocate a one-to-one NAT IP to the instance
+  }  
+ }
+}
